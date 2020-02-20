@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet",urlPatterns = "/HomeServlet")
+@WebServlet(name = "HomeServlet",urlPatterns = "/home")
 public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //从service层获取数据
@@ -21,10 +21,10 @@ public class HomeServlet extends HttpServlet {
         //存储数据
         request.setAttribute("categoryList",categoryList);
         //跳转到home.jsp
-        request.getRequestDispatcher("").forward(request,response);
+        request.getRequestDispatcher("/front/home.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+doPost(request,response);
     }
 }
